@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqufgtdeigpyk"]
+
+[ext_resource type="PackedScene" uid="uid://b3gyah6gtwfii" path="res://scenes/BattleScene/Bomber/Bomber.tscn" id="1_tyjaq"]
+[ext_resource type="Script" path="res://scenes/BattleScene/Bomber/Player/Player.gd" id="2_vw1a1"]
+
+[node name="Player" instance=ExtResource("1_tyjaq")]
+script = ExtResource("2_vw1a1")
+bomb_scene = null
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+frame_progress = 0.201622
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." index="5"]
+position = Vector2(0, 17.301)
+radius = 10.0

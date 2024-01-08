@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cciyyyydod7kj"]
+
+[ext_resource type="PackedScene" uid="uid://frsqicp57sue" path="res://scenes/BattleScene/Item/Item.tscn" id="1_00nfs"]
+[ext_resource type="Texture2D" uid="uid://csx3878emmv31" path="res://scenes/BattleScene/assets/item_shield.png" id="2_8ydfq"]
+[ext_resource type="Script" path="res://scenes/BattleScene/Item/Shield.gd" id="2_dpy3u"]
+
+[node name="Item" instance=ExtResource("1_00nfs")]
+script = ExtResource("2_dpy3u")
+
+[node name="Sprite2D" parent="Node2D" index="1"]
+texture = ExtResource("2_8ydfq")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://4818p4oq4dr1"]
+
+[ext_resource type="Texture2D" uid="uid://b0kpdq8x14054" path="res://scenes/BattleScene/assets/tiles2.png" id="1_l7cha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eodg"]
+size = Vector2(40, 40)
+
+[node name="Wall" type="StaticBody2D"]
+z_index = -1
+collision_layer = 2
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l7cha")
+region_enabled = true
+region_rect = Rect2(42, 42, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3eodg")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5mjcp8ejcmpf"]
+
+[ext_resource type="PackedScene" uid="uid://cwrv68q8um8oy" path="res://scenes/BattleScene/BomberPanel/BomberPanel.tscn" id="1_5ti7g"]
+[ext_resource type="Texture2D" uid="uid://dsrvwdngjr7sg" path="res://scenes/BattleScene/assets/face_dao.png" id="2_t412c"]
+
+[node name="Player4Panel" instance=ExtResource("1_5ti7g")]
+
+[node name="PlayerRect" parent="." index="2"]
+texture = ExtResource("2_t412c")

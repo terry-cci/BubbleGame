@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://4wphy4b2wgbl"]
+
+[ext_resource type="Texture2D" uid="uid://n3nbmua3tjsq" path="res://scenes/BattleScene/Bomb/assets/bomb.png" id="1_3rxux"]
+[ext_resource type="Script" path="res://scenes/BattleScene/Bomb/Bomb.gd" id="1_cj1jh"]
+[ext_resource type="Texture2D" uid="uid://10kbx57edc40" path="res://scenes/BattleScene/Bomb/assets/shadow.png" id="2_2vgtg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45ui3"]
+atlas = ExtResource("1_3rxux")
+region = Rect2(0, 0, 73, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwjy2"]
+atlas = ExtResource("1_3rxux")
+region = Rect2(73, 0, 73, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvn6t"]
+atlas = ExtResource("1_3rxux")
+region = Rect2(146, 0, 73, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ga52s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45ui3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwjy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvn6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bomb" type="StaticBody2D" groups=["bomb"]]
+z_index = -1
+position = Vector2(1, 0)
+scale = Vector2(0.9, 0.9)
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_cj1jh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.11111, 12.2222)
+texture = ExtResource("2_2vgtg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.873586, 0.873586)
+sprite_frames = SubResource("SpriteFrames_ga52s")
+frame_progress = 0.0789869
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.11111, 0)
+scale = Vector2(0.876428, 0.876428)
+polygon = PackedVector2Array(-13.3333, -14.4444, 0, -20, 13.3333, -13.3333, 0, 0)
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.11111, 0)
+rotation = -1.57079
+scale = Vector2(0.876, 0.876)
+polygon = PackedVector2Array(-13.3333, -14.4444, 0, -20, 13.3333, -13.3333, 0, 0)
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.11111, 0)
+rotation = -3.14159
+scale = Vector2(0.876, 0.876)
+polygon = PackedVector2Array(-13.3333, -14.4444, 0, -20, 13.3333, -13.3333, 0, 0)
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.11111, 0)
+rotation = 1.57079
+scale = Vector2(0.876, 0.876)
+polygon = PackedVector2Array(-13.3333, -14.4444, 0, -20, 13.3333, -13.3333, 0, 0)
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="FuseTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="FuseTimer" to="." method="_on_fuse_timer_timeout"]
