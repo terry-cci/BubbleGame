@@ -24,7 +24,7 @@ func _ready():
 			#label.set_anchors_preset(Control.PRESET_CENTER)
 			#label.global_position = to_global(tile_map.map_to_local(Vector2i(x,y)))
 			#label.add_theme_font_size_override('font_size', 16)
-			#label.add_theme_color_override('font_color', Color.RED)
+			#label.add_theme_color_override('font_color', Color.WHITE)
 			#tile_map.add_child(label)
 			#debug_labels[Vector2i(x,y)] = label	
 	
@@ -111,7 +111,10 @@ func get_destroyable_cells(start: Vector2i, direction: Vector2i, limit: int):
 	return cell_coords
 
 func _process(_delta):
-	#for x in ralabels[coords].text = str(cell_danger.get(coords, 0))
+	#for x in range(1,18):
+		#for y in range(1,10):
+			#var coords = Vector2i(x,y)
+			#debug_labels[coords].text = str(cell_danger.get(coords, 0))
 	
 	var left_time = ($CountdownTimer as Timer).time_left
 	
@@ -126,8 +129,10 @@ func _process(_delta):
 		($PauseMenu as Panel).visible = true
 		
 	if players[0] == null:
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/EndScene/GameOver.tscn")
 	elif players.filter(func (p): return p != null).size() == 1:
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/EndScene/EndScene.tscn")
 
 func _on_explosion_animation_finished(explosion_position: Vector2):

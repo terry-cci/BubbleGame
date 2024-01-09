@@ -94,7 +94,7 @@ func get_bomber_speed():
 	if left_bomb > 0 and player_list.any(is_player_near):
 		bomb_placed.emit(to_global($BombPlacingPosition.position), bomb_power, self)
 	
-	return safe_velocity * rng.randf_range(1.5,2)
+	return safe_velocity * rng.randf_range(1.75,2)
 
 func is_player_near(player):
 	return player != null and player != self and (player.get_coords() - get_coords()).length() < bomb_power and not player.is_dead

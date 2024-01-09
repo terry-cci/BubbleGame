@@ -154,8 +154,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_acy6k"]
-size = Vector2(23.3619, 35.3905)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e1glp"]
+height = 36.909
 
 [sub_resource type="Animation" id="Animation_hi7l1"]
 length = 0.001
@@ -215,7 +215,7 @@ frame_progress = 0.184322
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.7736e-05, 18.2649)
 rotation = 1.57079
-shape = SubResource("RectangleShape2D_acy6k")
+shape = SubResource("CapsuleShape2D_e1glp")
 
 [node name="BombPlacingPosition" type="Node2D" parent="."]
 position = Vector2(0, 19.0565)

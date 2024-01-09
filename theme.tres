@@ -1,5 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://6fbxi014iswr"]
 
+[ext_resource type="FontFile" uid="uid://cjfgaha8nh6yk" path="res://ROGFonts-Regular.otf" id="1_yu8os"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06qtj"]
 content_margin_left = 5.0
 content_margin_top = 5.0
@@ -58,11 +60,8 @@ shadow_color = Color(0, 0, 0, 0.313726)
 shadow_size = 2
 shadow_offset = Vector2(2, 2)
 
-[sub_resource type="SystemFont" id="SystemFont_a1o6g"]
-font_names = PackedStringArray("ROG Fonts")
-
 [resource]
-default_font = SubResource("SystemFont_a1o6g")
+default_font = ExtResource("1_yu8os")
 default_font_size = 32
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_06qtj")
